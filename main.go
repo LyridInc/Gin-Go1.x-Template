@@ -3,11 +3,18 @@ package main
 import (
 	"github.com/joho/godotenv"
 	entry "go1x_gin.template/entry"
+	"os"
 )
 
 func main() {
 	godotenv.Load()
 
 	router := entry.Initialize()
-	router.Run(":3000")
+
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "3000"
+	}
+
+	router.Run(":" + port)
 }

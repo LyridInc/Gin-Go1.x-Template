@@ -4,9 +4,7 @@ ignoreFiles: .git
 modules:
 - name: template
   language: go1.x
-  web: gin
   description: Module description
   functions:
   - name: entry
-    entry: entry.go
     description: the entry point for the function
